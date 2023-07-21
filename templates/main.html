@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="cbox">
+    
+    <div class="chat-container">
+          <div class="message user-message">Hello, AI!</div><br>
+          <div class="message ai-message">Hi there! How can I assist you?</div>
+        
+        </div>
+          
+        </div>
+        <form method="post">
+        <div class="form-group">
+          
+          <div id="userInput" class="row">
+            <div class="col-md-10">
+                <input id="text" type="text" name="msg" placeholder="Message" class="form-control">
+                <button type="submit" id="send" class="btn btn-primary display: inline-block;">Send</button>
+            </div>
+        </div>
+        </div>
+      </form>
+{% endblock %}
