@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Medibot</title>
-        <link rel="stylesheet" href="/static/css/bootstrap.css">
-        <link href="/static/fontawesome/css/fontawesome.css" rel="stylesheet">
-        <link href="/static/fontawesome/css/brands.css" rel="stylesheet">
-        <link href="/static/fontawesome/css/solid.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="/static/fontawesome/css/all.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link href="/static/css/style.css" rel="stylesheet">
-        <link href="/static/fontawesome/css/all.css" rel="stylesheet">
-        <script src="static/script.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom header">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-              <span class="fs-4">Simple header</span>
-            </a>
-      
-            <ul class="nav nav-pills">
-              <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"><i class="fa-solid fa-house" href="#"></i></a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            </ul>
-          </header>
-        {% block content %}
-        {% endblock %}
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top footer bottom:0px; position: fixed;">
-            <div class="col-md-4 d-flex align-items-center">
-              <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-                <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-              </a>
-              <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Hygieia</span>
-            </div>
-        
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-              <li class="ms-3"><a class="fa-brands fa-github" href="#"></a></li>
-            </ul>
-          </footer>
-          <script>
-            $(document).ready(function() {
-        $("form").on("submit", function(event) {
-            var rawText = $("#text").val();
-            var userHtml = '<div class="message user-message"><span>' + rawText + "</span></div><br>";
-            $("#text").val("");
-            $(".chat-container").append(userHtml);
-            document.getElementById("userInput").scrollIntoView({
-                block: "start",
-                behavior: "smooth",
-            });
-            $.ajax({
-                data: {
-                    msg: rawText,
-                },
-                type: "POST",
-                url: "/get",
-            }).done(function(data) {
-                var botHtml = '<div class="message ai-message"><span>' + data + "</span></div><br>";
-                $(".chat-container").append($.parseHTML(botHtml));
-                document.getElementById("userInput").scrollIntoView({
-                    block: "start",
-                    behavior: "smooth",
-                });
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-              });
-            event.preventDefault();
+<head>
+  <meta charset="UTF-8">
+  <title>Medibot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="#" class="fs-6"><img src='/static/logo.jpg' alt="Image" height="50" width="50"><span class="brand">   Medibot</span></a>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link fs-4">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link fs-4">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"><i
+              class='fa-solid fa-house'></i></a></li>
+        <li class="nav-item"><a href="#" class="nav-link fs-4"> FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link fs-4"> About</a></li>
+      </ul>
+    </header>
+  </div>
+  {% block content %}
+  {% endblock %}
+  <footer
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top footer bottom:0px; position: fixed;">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Hygieia</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="fa-brands fa-github fa-2xl" href="#"></a></li>
+    </ul>
+  </footer>
+  <script>
+    $(document).ready(function () {
+      $("form").on("submit", function (event) {
+        let chatContainer = document.getElementById('main')
+        event.preventDefault();
+        var rawText = $("#text").val();
+        var userHtml = "<div class='message user-message d-inline-flex float-end'><span>" + rawText + "</span></div><br>";
+        $("#text").val("");
+        $(".chat-container").append(userHtml);
+        document.getElementById("userInput").scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        });
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+        $.ajax({
+          data: {
+            msg: rawText,
+          },
+          type: "POST",
+          url: "/get",
+        }).done(function (data) {
+          var botHtml = "<img src='/static/logo.jpg' width=50 height=50> <div class='message ai-message d-inline-flex'><span>" + data + "</span></div><br>";
+          $(".chat-container").append($.parseHTML(botHtml));
+
+          
+
+          document.getElementById("userInput").scrollIntoView({
+            block: "start",
+            behavior: "smooth",
           });
+          chatContainer.scrollTop = chatContainer.scrollHeight;
+        });
+
+      });
     });
     // Scroll to the bottom of the chat container
-    
-          </script>
-    </body>
+
+  </script>
+</body>
+
 </html>
