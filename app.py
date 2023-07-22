@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('main.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 @app.route("/get", methods=["GET", "POST"])
 def respond():
     msg = request.form["msg"]

@@ -69,7 +69,9 @@ a {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
+.btn-purple {
+    background-color: #f200ff;
+}
 .userInput button {
     margin-left: 5px;
     padding: 5px 10px;
@@ -97,7 +99,7 @@ a {
     margin-right: 10px;
   }
 .header {
-    background-color: #f1f1f1;
+    background-color: #e6cdf9;
 }
 .footer {
     background-color: #f1f1f1;
