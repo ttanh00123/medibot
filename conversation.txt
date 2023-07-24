@@ -1,0 +1,26 @@
+hi:Hello!
+hello:Hi!
+hi!:Hello!
+hello!:Hi!
+what's your name:My name is MediBot
+what is your name:My name is MediBot
+what's your name?:My name is MediBot
+what is your name?:My name is MediBot
+is Tran stupid?:Yes, she is very stupid
+is minh stupid?:Yes, she is very stupid
+is Bao stupid?:Yes, he is very stupid
+is Son stupid?:Yes, he is very stupid
+is Tran stupid:Yes, she is very stupid
+is Anh stupid:Yes, he is very stupid
+is Bao stupid:Yes, he is very stupid
+is Son stupid:Yes, he is very stupid
+is Mentor Phan Luan handsome?:Yes, he is very very handsome
+is Mentor Phan Luan handsome:Yes, he is very very handsome
+how are you?:I'm okkkkkkkk!
+how are you:I am finee!
+how old are you?: I'm 10 days old
+is tan minh handsome?:yes, he is
+is bao handsome?:yes, he is
+is tran handsome?:yes, she is very handsome
+is anh handsome?:yes,he is
+does tran eat shit?:no,she eats cum
