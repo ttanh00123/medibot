@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-import sqlite3
 from formsql import get_response
 app = Flask(__name__)
 
