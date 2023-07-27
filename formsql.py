@@ -3,7 +3,7 @@ import MySQLdb;
 import algo
 
 # connect server sql
-db = MySQLdb.connect(host="localhost",    
+db = MySQLdb.connect(host="127.0.0.1",    
                     user="root",         
                     passwd="minh01072007",  
                     db="sys")        
@@ -67,6 +67,9 @@ def get_response(s):
     for s in recommendlist:
         if (s != ""):
             res += "<br> +)" + s + "."
+    #<a href="http://hoclaptrinh.vn">Hoclaptrinh.vn</a>
+    res += "<br>You could also find more about the disease on Wikipedia: <a href="+'"'+"https://en.wikipedia.org/wiki/{dic1['name']}"+'"'+">"+dic1["name"]+"</a>"
+
     if n>0:
         res += "<br>You could also have:"
         dic2 = get_by_id(datalist[n-1][1])
