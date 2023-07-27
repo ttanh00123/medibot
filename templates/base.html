@@ -63,7 +63,7 @@
           type: "POST",
           url: "/get",
         }).done(function (data) {
-          var botHtml = "<div class='d-flex flex-row'> <img src='/static/logo.png' width=65 height=50><span class='message ai-message'>" + data + "</span></div><br>";
+          var botHtml = "<div class='d-flex flex-row'> <img src='/static/logo.png' width=60 height=50><span class='message ai-message'>" + data + "</span></div><br>";
           $(".chat-container").append($.parseHTML(botHtml));
           document.getElementById("userInput").scrollIntoView({
             block: "start",
