@@ -1,18 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="container">
-    <h1>About Us</h1>
-    <p>Welcome to Medibot!</p>
-    <p>We’re here to help you with your medical questions and concerns.</p>
-    <p>Our chatbot is designed to provide you with accurate and reliable medical advice.</p>
-    <p>Whether you’re looking for information on a specific condition or just need some general health advice, our chatbot is here to help.</p>
-    <h2>Our team members</h2>
-    <p>Trương Tấn Minh (leader) FCT0220 <br>
-      Nguyễn Hoàng Thái Sơn FCT0222 <br>
-      Trần Ngọc Hải Trân FCT0348 <br>
-      Trần Trung Anh  FCT0304   <br>
-      Huỳnh Trung Bảo FCT0112 <br>
-  </div>
+<body>
+
+      <div class="container">
+    <h1 style="color: #b43757;">About Us</h1>
+      <p>Welcome to Medibot!</p>
+      <p>We’re a group of young developers from FCT here to help you with your medical questions and concerns.</p>
+      <p>Our chatbot is designed to provide you with accurate and reliable medical advice.</p>
+      <p>Whether you’re looking for information on a specific condition or just need some general health advice, our chatbot is here to help.</p>
+    <h1 style="color: #b43757;">Our team members</h1>   
+      <p><span class="styled-text">Trương Tấn Minh</span> FCT0220 (Leader,PM, Back-end dev)  <img src="static\Minh.png" alt="" class="anh"><br>
+          <span class="styled-text">Nguyễn Hoàng Thái Sơn</span>  FCT0222 (Front-end dev) <img src="static\Son.png" alt="" class="anh"><br>
+          <span class="styled-text">Trần Ngọc Hải Trân</span> FCT0348 (Designer) <img src="static\Tran.png" alt="" class="anh"><br>
+          <span class="styled-text">Trần Trung Anh</span>  FCT0304 (Front-end dev)  <img src="static\TrungAnh.png" alt="" class="anh"><br>
+          <span class="styled-text">Huỳnh Trung Bảo</span> FCT0112 (Back-end dev) <img src="static\Bao.png" alt="" class="DHS anh"><br>
+      </p>
+    <style>
+      .anh {
+              width: 200px;
+              height: 200px; 
+          }
+      .DHS{
+              width: 227px;
+              height: 227px;
+          }
+      .styled-text {
+          font-size: 24px; 
+          font-weight: bold;
+          color: rgb(212, 36, 36);
+      }
+      p {
+        color: #6631af;
+        font-family: Open Sans;
+      }
+    </style>
+    </div>
+</body>
 {% endblock %}
 
 

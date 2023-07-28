@@ -6,7 +6,6 @@ from textblob import TextBlob
 spell = Speller(lang='en')
 f= open('symptoms.txt', 'r+')
 f2 = open('conversation.txt', 'r+')
-
 linestext = []
 symptoms=[]
 mp ={}
