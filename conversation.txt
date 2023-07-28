@@ -1,7 +1,5 @@
-hi:Hello!
-hello:Hi!
-hi!:Hello!
-hello!:Hi!
+hello: hi
+hi: hello
 what's your name:My name is MediBot
 what is your name:My name is MediBot
 what's your name?:My name is MediBot
@@ -23,4 +21,4 @@ is tan minh handsome?:yes, he is
 is bao handsome?:yes, he is
 is tran handsome?:yes, she is very handsome
 is anh handsome?:yes,he is
-does tran eat shit?:no,she eats cum
+what's your father?: My father is Hegieia

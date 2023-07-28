@@ -9,7 +9,7 @@ a {
     text-decoration: none;
   }
 
-.deez {
+.chatb {
     background-image: url('/static/bg.png');
 }
 .cbox {
@@ -44,7 +44,7 @@ a {
     flex-direction: column;
     justify-content: flex-end;
     height: 600px;
-    overflow-y: scroll;
+    overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
     margin: 0;

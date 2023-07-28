@@ -9,6 +9,8 @@ db = MySQLdb.connect(host="127.0.0.1",
                     db="sys")        
 
 # khai báo
+
+
 cur = db.cursor()
 datasize = algo.lendata()
 conv = algo.conversation_dic()
@@ -68,7 +70,7 @@ def get_response(s):
         if (s != ""):
             res += "<br> +)" + s + "."
     #<a href="http://hoclaptrinh.vn">Hoclaptrinh.vn</a>
-    res += "<br>You could also find more about the disease on Wikipedia: <a href="+'"'+"https://en.wikipedia.org/wiki/{dic1['name']}"+'"'+">"+dic1["name"]+"</a>"
+    #res += "<br>You could also find more about the disease on Wikipedia:" + f"https://en.wikipedia.org/wiki/{dic1['name']}"+'"'+">"+dic1["name"]+"</a>"
 
     if n>0:
         res += "<br>You could also have:"
@@ -78,7 +80,3 @@ def get_response(s):
         dic3 = get_by_id(datalist[n-2][1])
         res += "<br>+) " + dic3["name"] + "."
     return res
-
-#test
-#t = input()
-#print(get_response(t))
